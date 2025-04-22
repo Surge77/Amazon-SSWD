@@ -1,0 +1,2 @@
+- While we are in the Explorer below is a timeline button which is useful in tracking all the commits we have made
+- Just filter it to just Git history it shows you all the commits

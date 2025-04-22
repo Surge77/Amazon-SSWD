@@ -54,7 +54,8 @@ products.forEach((product) => {
             Added
           </div>
 
-          <button class="add-to-cart-button button-primary">
+          <button class="add-to-cart-button button-primary js-add-to-cart"
+          data-product-id="${product.id}">
             Add to Cart
           </button>
         </div>
@@ -65,3 +66,35 @@ products.forEach((product) => {
 
 //This puts the generated HTML under the products grid in the HTML file.
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+
+//button.dataset gets us the data attributes from the button element.
+document.querySelectorAll('.js-add-to-cart')
+.forEach((button) => {
+  button.addEventListener('click', () => {
+    const productId = button.dataset.productId; //This gets converted from kebab case to camelCase
+
+    let matchingItem;
+
+    //Here we are iterating over each object in the array
+    //We do this iteration in order to find the object that has the same name as the product we are trying to add to the cart.
+    cart.forEach((item) => {
+      if(productId === item.productId){
+        matchingItem = item;
+      }
+    });
+
+    //IF we find matching item we increment quantity by 1.
+    if(matchingItem){
+      matchingItem.quantity += 1;
+    }else{
+      cart.push({
+        productId: productId,
+        quantity: 1
+      });
+    }
+  
+    console.log(cart);
+    
+  });
+});
