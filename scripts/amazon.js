@@ -93,8 +93,21 @@ document.querySelectorAll('.js-add-to-cart')
         quantity: 1
       });
     }
-  
-    console.log(cart);
+
+
+    // Steps to make the Cart button interactive
+    // 1. Calculate the quantity
+    // 2.Put the quantity on the page
+    // 3. This increases the cart quantity on the page
+
+    let cartQuantity = 0;
+    
+    //loops through each object in array
+    cart.forEach((item) => {
+      cartQuantity += item.quantity
+    });
+
+    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
     
   });
 });
