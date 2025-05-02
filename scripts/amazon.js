@@ -5,6 +5,8 @@
 //Here product is the object that we are passing to the function. 
 // We use template literals to put the dynamic values in the HTML string.
 
+import {cart} from '../data/cart.js';
+
 let productsHTML = '';
 
 
@@ -102,7 +104,7 @@ document.querySelectorAll('.js-add-to-cart')
 
     let cartQuantity = 0;
     
-    //loops through each object in array
+    //loops through each object in array 
     cart.forEach((item) => {
       cartQuantity += item.quantity
     });

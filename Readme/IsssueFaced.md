@@ -21,7 +21,7 @@
 
 ## Challenges faced and solutions
 
-- Problem - Issue with adding a logo beside the title 
+1. Problem - Issue with adding a logo beside the title 
 - solution - Did Ctrl + F5 to refresh with cache bypass 
 
 - Some other precautions:
@@ -36,7 +36,7 @@
 
 
 
-- Problem: Upon clicking the add to cart button how do the program knows which product to add to the cart?
+2.  Problem: Upon clicking the add to cart button how do the program knows which product to add to the cart?
 
 - Solution: We use data attribute to tackle this problem
   - Is is just another HTML attribute
@@ -44,8 +44,19 @@
 
 
 
-- Problem: In our website we can have two products with same name and different brands so just giving the data attribute as productName is not enough
+3. Problem: In our website we can have two products with same name and different brands so just giving the data attribute as productName is not enough
 
 Solution: To fix this :
-  - Give each product an id.
+  - Give each product an i
   - This id should be unique.
+
+
+4. Problem: Naming conflicts while importing it with script tags
+
+solution: Adding multiple <script> tags without type="module" dumps everything into the global namespace — leading to conflicts. So we need o create a module and import it with <script type="module">
+
+> Steps to get a variable out of a file
+
+1. Add type="module" to the script tag
+2. Export the variable
+3. Import the variable
