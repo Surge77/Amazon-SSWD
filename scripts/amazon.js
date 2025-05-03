@@ -5,11 +5,10 @@
 //Here product is the object that we are passing to the function. 
 // We use template literals to put the dynamic values in the HTML string.
 
-import {cart} from '../data/cart.js';
+import {cart, addToCart} from '../data/cart.js';
 import {products} from '../data/products.js';
 
 let productsHTML = '';
-
 
 products.forEach((product) => {
   productsHTML += ` 
@@ -65,40 +64,11 @@ products.forEach((product) => {
   `;
 
 });
-
-
 //This puts the generated HTML under the products grid in the HTML file.
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-
-//button.dataset gets us the data attributes from the button element.
-document.querySelectorAll('.js-add-to-cart')
-.forEach((button) => {
-  button.addEventListener('click', () => {
-    const productId = button.dataset.productId; //This gets converted from kebab case to camelCase
-
-    let matchingItem;
-
-    //Here we are iterating over each object in the array
-    //We do this iteration in order to find the object that has the same name as the product we are trying to add to the cart.
-    cart.forEach((item) => {
-      if(productId === item.productId){
-        matchingItem = item;
-      }
-    });
-
-    //IF we find matching item we increment quantity by 1.
-    if(matchingItem){
-      matchingItem.quantity += 1;
-    }else{
-      cart.push({
-        productId: productId,
-        quantity: 1
-      });
-    }
-
-
-    // Steps to make the Cart button interactive
+function updateCartQuantity(){
+  // Steps to make the Cart button interactive
     // 1. Calculate the quantity
     // 2.Put the quantity on the page
     // 3. This increases the cart quantity on the page
@@ -106,11 +76,21 @@ document.querySelectorAll('.js-add-to-cart')
     let cartQuantity = 0;
     
     //loops through each object in array 
-    cart.forEach((item) => {
-      cartQuantity += item.quantity
+    cart.forEach((cartItem) => {
+      cartQuantity += cartItem.quantity
     });
 
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+}
+
+//button.dataset gets us the data attributes from the button element.
+document.querySelectorAll('.js-add-to-cart')
+.forEach((button) => {
+  button.addEventListener('click', () => {
+    const productId = button.dataset.productId; //This gets converted from kebab case to camelCase
+
+    addToCart(productId);
+    updateCartQuantity();
     
   });
 });
