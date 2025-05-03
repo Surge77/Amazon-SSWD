@@ -6,6 +6,7 @@
 // We use template literals to put the dynamic values in the HTML string.
 
 import {cart} from '../data/cart.js';
+import {products} from '../data/products.js';
 
 let productsHTML = '';
 
