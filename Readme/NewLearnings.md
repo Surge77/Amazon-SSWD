@@ -44,3 +44,7 @@ Test that sometimes passes and sometimes fails
 
 lets us replace a method with fake one
 
+
+### Procedural Programming
+
+Procedure = a set of step by step instructions i.e a function
