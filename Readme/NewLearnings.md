@@ -35,3 +35,12 @@ testing in JavaScript is about writing code that checks your code. You feed your
 ### Testing Framework
 
 External library that helps us writing test easier
+
+### Flaky test
+
+Test that sometimes passes and sometimes fails
+
+### Mocks 
+
+lets us replace a method with fake one
+

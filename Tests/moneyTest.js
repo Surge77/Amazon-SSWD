@@ -1,6 +1,8 @@
 import { formatCurrency } from '../scripts/utils/money.js';
 
 //Testing the formatCurrency function
+
+//THis is automated testing using code
 console.log('test suite: formatCurrency');
 
 console.log('converts cents into dollars');
