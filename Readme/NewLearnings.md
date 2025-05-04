@@ -17,3 +17,17 @@
 
 1. Helps us Avoids naming conflicts
 2. WE don't need to worry about the order of the scripts
+
+
+## Testing  
+
+testing in JavaScript is about writing code that checks your code. You feed your functions certain inputs, then assert that the output matches what you expect.
+
+- Manual Testing => Manual testing means a human (like you) is clicking around, running your app, and checking if things work as expected.
+
+- Automated Testing => Automated testing means you write code that automatically tests your code.
+
+#### Generally we should have two types of test cases
+
+1. Basic Test Cases
+2. Edge Cases
