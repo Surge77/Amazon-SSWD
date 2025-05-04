@@ -31,3 +31,7 @@ testing in JavaScript is about writing code that checks your code. You feed your
 
 1. Basic Test Cases
 2. Edge Cases
+
+### Testing Framework
+
+External library that helps us writing test easier
