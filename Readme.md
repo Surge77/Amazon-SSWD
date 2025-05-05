@@ -11,13 +11,6 @@ A clean, responsive Amazon homepage clone built using **HTML**, **CSS**, and **v
 
 ---
 
-## 📸 Preview
-
-![Amazon Clone Screenshot](./images/preview.png)  
-*(Add your screenshot in the `images` folder and name it `preview.png`)*
-
----
-
 ## ✨ Features
 
 - 🔍 **Search Bar UI** – Styled input with icon and button
