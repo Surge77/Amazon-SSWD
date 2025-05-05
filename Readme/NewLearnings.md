@@ -48,3 +48,12 @@ lets us replace a method with fake one
 ### Procedural Programming
 
 Procedure = a set of step by step instructions i.e a function
+
+
+### Constructor in a class -> Setup code 
+
+
+### Inheritance 
+
+- Let's us reuse the code between classes  
+- For ex: Method overriding , polymorphism
