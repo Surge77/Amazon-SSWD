@@ -57,3 +57,10 @@ Procedure = a set of step by step instructions i.e a function
 
 - Let's us reuse the code between classes  
 - For ex: Method overriding , polymorphism
+
+
+### Summary of this keyword
+
+1. Inside a method "this" points to the outer object
+2. Inside a function "this" = undefined , but we can change it to whatever we want  
+3. Arrow functions do not change the value of "this"
