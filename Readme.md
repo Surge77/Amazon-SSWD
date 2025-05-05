@@ -7,7 +7,6 @@ A clean, responsive Amazon homepage clone built using **HTML**, **CSS**, and **v
 ## 🚀 Live Demo
 
 👉 [View Live on Netlify](https://amazon-js-swd.netlify.app/)  
-*(Replace this with your actual deployed link)*
 
 ---
 
