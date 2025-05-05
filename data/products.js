@@ -43,15 +43,13 @@ class Product {
 class Clothing extends Product {
   sizeChartLink;
 
-  
   constructor(productDetails) {
-    //Super calls the parent constructor
     super(productDetails);
     this.sizeChartLink = productDetails.sizeChartLink;
   }
 
   extraInfoHTML() {
-    // super.extraInfoHTML(); calls the parent method 
+    // super.extraInfoHTML();
     return `
       <a href="${this.sizeChartLink}" target="_blank">
         Size chart
@@ -91,6 +89,59 @@ const object3 = {
 object3.method();
 */
 
+export let products = [];
+
+export function loadProductsFetch() {
+  const promise = fetch(
+    'https://supersimplebackend.dev/products'
+  ).then((response) => {
+    return response.json();
+  }).then((productsData) => {
+    products = productsData.map((productDetails) => {
+      if (productDetails.type === 'clothing') {
+        return new Clothing(productDetails);
+      }
+      return new Product(productDetails);
+    });
+
+    console.log('load products');
+  }).catch((error) => {
+    console.log('Unexpected error. Please try again later.');
+  });
+
+  return promise;
+}
+/*
+loadProductsFetch().then(() => {
+  console.log('next step');
+});
+*/
+
+export function loadProducts(fun) {
+  const xhr = new XMLHttpRequest();
+
+  xhr.addEventListener('load', () => {
+    products = JSON.parse(xhr.response).map((productDetails) => {
+      if (productDetails.type === 'clothing') {
+        return new Clothing(productDetails);
+      }
+      return new Product(productDetails);
+    });
+
+    console.log('load products');
+
+    fun();
+  });
+
+  xhr.addEventListener('error', (error) => {
+    console.log('Unexpected error. Please try again later.');
+  });
+
+  xhr.open('GET', 'https://supersimplebackend.dev/products');
+  xhr.send();
+}
+
+/*
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -756,3 +807,4 @@ export const products = [
   }
   return new Product(productDetails);
 });
+*/
